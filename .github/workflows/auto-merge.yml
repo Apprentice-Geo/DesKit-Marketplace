@@ -1,0 +1,25 @@
+name: auto-merge
+
+# When a maintainer approves a PR, enable GitHub native auto-merge (squash).
+# Auto-merge waits for branch protection — required "validate" check + the
+# required review — before it actually merges, then the repo's
+# "delete branch on merge" setting removes the head branch.
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enable-auto-merge:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge on the approved PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge "$PR_URL" --auto --squash

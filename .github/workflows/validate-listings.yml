@@ -1,0 +1,58 @@
+name: validate-listings
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Validate all listings (schema + filename)
+        run: npm run validate
+
+      - name: Check registry.json is in sync with listings
+        run: |
+          node scripts/build-registry.mjs
+          if ! git diff --quiet -- registry.json; then
+            echo "::error::registry.json is out of sync with plugins/*.json. Run 'npm run build-registry' and commit the result."
+            git --no-pager diff -- registry.json
+            exit 1
+          fi
+          echo "registry.json is in sync"
+
+      - name: Deep-check changed .deskit packages (PR only)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          changed=$(git diff --name-only --diff-filter=AM "$BASE_SHA" "$HEAD_SHA" -- 'plugins/*.json' || true)
+          if [ -z "$changed" ]; then
+            echo "No listing files added or modified in this PR — skipping download check."
+            exit 0
+          fi
+          echo "Changed listings:"
+          echo "$changed"
+          status=0
+          while IFS= read -r listing; do
+            [ -z "$listing" ] && continue
+            node scripts/check-deskit.mjs "$listing" || status=1
+          done <<< "$changed"
+          exit $status

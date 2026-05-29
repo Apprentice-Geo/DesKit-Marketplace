@@ -5,17 +5,12 @@
   "description": "Generated index the DesKit client fetches over HTTPS. Built from plugins/*.json — do not hand-edit when a build step is in place.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["version", "generatedAt", "plugins"],
+  "required": ["version", "plugins"],
   "properties": {
     "version": {
       "type": "integer",
       "const": 1,
       "description": "Registry format version. Bump when the entry shape changes incompatibly."
-    },
-    "generatedAt": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO timestamp of when this index was generated."
     },
     "plugins": {
       "type": "array",

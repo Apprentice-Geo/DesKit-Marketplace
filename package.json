@@ -1,0 +1,17 @@
+{
+  "name": "deskit-marketplace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Curated registry for DesKit plugins",
+  "license": "MIT",
+  "scripts": {
+    "validate": "node scripts/validate-listings.mjs",
+    "build-registry": "node scripts/build-registry.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yauzl": "^3.2.0"
+  }
+}
