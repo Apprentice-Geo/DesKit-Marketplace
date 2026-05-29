@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/WiIIiamWei/DesKit-Marketplace/schema/registry-entry.schema.json",
+  "title": "DesKit Marketplace registry entry",
+  "description": "One published plugin listing. Lives at plugins/<id>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "displayName",
+    "description",
+    "author",
+    "homepage",
+    "version",
+    "downloadUrl",
+    "sha256",
+    "deskitEngine"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*(?:\\.[a-z0-9][a-z0-9-]*)+$",
+      "description": "Reverse-DNS plugin id, e.g. com.alice.weather. Must match the manifest id and the filename."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short machine-ish name (matches the plugin manifest name)."
+    },
+    "displayName": { "$ref": "#/$defs/localizedString" },
+    "description": { "$ref": "#/$defs/localizedString" },
+    "author": { "type": "string", "minLength": 1 },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "description": "Plugin source repository or landing page (https only)."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$",
+      "description": "Semver of this listing. Re-publishing requires a new version + new PR."
+    },
+    "downloadUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://",
+      "description": "HTTPS URL of the prebuilt .deskit GitHub Release asset. The client downloads this directly; it must NOT point at source that needs building."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Lowercase hex SHA-256 of the .deskit asset. The client refuses a download whose hash differs."
+    },
+    "deskitEngine": {
+      "type": "string",
+      "description": "Semver range of DesKit versions this plugin supports, e.g. ^0.2.0."
+    },
+    "icon": {
+      "type": "string",
+      "description": "Optional: https URL or lucide:<name> for the listing icon."
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional free-form tags for filtering in the marketplace UI."
+    }
+  },
+  "$defs": {
+    "localizedString": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "type": "string", "minLength": 1 },
+          "description": "Locale map, e.g. { \"en\": \"Weather\", \"zh-CN\": \"天气\" }."
+        }
+      ]
+    }
+  }
+}

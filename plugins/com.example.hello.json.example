@@ -1,0 +1,17 @@
+{
+  "id": "com.example.hello",
+  "name": "hello",
+  "displayName": { "en": "Hello", "zh-CN": "你好" },
+  "description": {
+    "en": "Example listing — copy this file to plugins/<your-id>.json and open a PR.",
+    "zh-CN": "示例条目 —— 复制本文件为 plugins/<你的-id>.json 并发起 PR。"
+  },
+  "author": "DesKit team",
+  "homepage": "https://github.com/WiIIiamWei/deskit-plugin-template",
+  "version": "0.1.0",
+  "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-template/releases/download/v0.1.0/hello-0.1.0.deskit",
+  "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "deskitEngine": "^0.2.0",
+  "icon": "lucide:hand",
+  "categories": ["example"]
+}
