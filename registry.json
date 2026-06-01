@@ -2,6 +2,28 @@
   "version": 1,
   "plugins": [
     {
+      "id": "com.deskit.clipboard-history",
+      "name": "clipboard-history",
+      "displayName": {
+        "en": "Clipboard History",
+        "zh-CN": "历史剪贴板"
+      },
+      "description": {
+        "en": "Collect recent clipboard items and paste them from the launcher.",
+        "zh-CN": "记录最近的剪贴板内容，并可从启动器快速粘贴。"
+      },
+      "author": "DesKit",
+      "homepage": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history",
+      "version": "0.3.0",
+      "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history/releases/download/v0.3.0/com.deskit.clipboard-history-0.3.0.deskit",
+      "sha256": "ad936219f48d30e0f7f357008032e8d8f59c94e2b29604e571c8f01bbcde4efb",
+      "deskitEngine": "^0.2.0",
+      "icon": "lucide:clipboard-list",
+      "categories": [
+        "utilities"
+      ]
+    },
+    {
       "id": "com.deskit.timestamp",
       "name": "timestamp",
       "displayName": {
