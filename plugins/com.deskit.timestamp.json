@@ -11,10 +11,12 @@
   },
   "author": "DesKit",
   "homepage": "https://github.com/WiIIiamWei/deskit-plugin-timestamp",
-  "version": "0.3.0",
-  "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-timestamp/releases/download/v0.3.0/com.deskit.timestamp-0.3.0.deskit",
-  "sha256": "737a03f20e50df4c9c36063f76e29f0b39abdd44e6f32c2049476768bb497b90",
+  "version": "0.3.1",
+  "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-timestamp/releases/download/v0.3.1/com.deskit.timestamp-0.3.1.deskit",
+  "sha256": "b65eddc341bcaab1ff0835f432fea53cef06e24f55e387271970e054e1134b1b",
   "deskitEngine": "^0.2.0",
   "icon": "lucide:clock",
-  "categories": ["utilities"]
+  "categories": [
+    "utilities"
+  ]
 }

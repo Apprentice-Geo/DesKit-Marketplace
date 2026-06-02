@@ -11,9 +11,9 @@
   },
   "author": "DesKit",
   "homepage": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history",
-  "version": "0.3.0",
-  "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history/releases/download/v0.3.0/com.deskit.clipboard-history-0.3.0.deskit",
-  "sha256": "ad936219f48d30e0f7f357008032e8d8f59c94e2b29604e571c8f01bbcde4efb",
+  "version": "0.3.1",
+  "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history/releases/download/v0.3.1/com.deskit.clipboard-history-0.3.1.deskit",
+  "sha256": "994d1e1bcbb4461453f4e468454f63b2540bc2c2eebd0f1ac5590fa67f75fce2",
   "deskitEngine": "^0.2.0",
   "icon": "lucide:clipboard-list",
   "categories": [
