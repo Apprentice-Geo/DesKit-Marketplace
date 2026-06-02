@@ -37,6 +37,11 @@ DesKit client ──HTTPS GET──▶ registry.json (this repo, raw.githubuserc
 3. Copy `plugins/com.example.hello.json.example` to
    `plugins/<your-plugin-id>.json`, fill in the fields (including the
    Release `downloadUrl` and the `sha256` from the Action output).
+   Set `icon` to either `lucide:<name>` (for a bundled Lucide icon) or a
+   relative image path packaged inside the plugin's `.deskit` file. Keep
+   this value aligned with the plugin's own `deskit.json` icon so installed
+   plugins and marketplace listings render consistently without network
+   access.
 4. Open a pull request. A maintainer reviews the listing, verifies the
    download hash, and merges.
 
