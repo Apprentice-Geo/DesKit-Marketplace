@@ -9,14 +9,14 @@
         "zh-CN": "历史剪贴板"
       },
       "description": {
-        "en": "Collect recent clipboard items and paste them from the launcher.",
-        "zh-CN": "记录最近的剪贴板内容，并可从启动器快速粘贴。"
+        "en": "Collect recent clipboard items and copy them back from the launcher.",
+        "zh-CN": "记录最近的剪贴板内容，并可从启动器快速复制。"
       },
       "author": "DesKit",
       "homepage": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history",
-      "version": "0.3.1",
-      "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history/releases/download/v0.3.1/com.deskit.clipboard-history-0.3.1.deskit",
-      "sha256": "994d1e1bcbb4461453f4e468454f63b2540bc2c2eebd0f1ac5590fa67f75fce2",
+      "version": "0.4.3",
+      "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-clipboard-history/releases/download/v0.4.3/com.deskit.clipboard-history-0.4.3.deskit",
+      "sha256": "46f5157c969ba7ba54f39d897e28cead516eebb5b87a70d6c147ae7a948b3fcd",
       "deskitEngine": "^0.2.0",
       "icon": "lucide:clipboard-list",
       "categories": [
