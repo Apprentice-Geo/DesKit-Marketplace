@@ -2,6 +2,28 @@
   "version": 1,
   "plugins": [
     {
+      "id": "com.deskit.calculator",
+      "name": "calculator",
+      "displayName": {
+        "en": "Calculator",
+        "zh-CN": "计算器"
+      },
+      "description": {
+        "en": "Evaluate arithmetic, functions, constants, unit angles, and equality checks.",
+        "zh-CN": "计算四则运算、函数、常数、角度单位，并判断等式是否相等。"
+      },
+      "author": "DesKit",
+      "homepage": "https://github.com/WiIIiamWei/deskit-plugin-calculator",
+      "version": "0.1.1",
+      "downloadUrl": "https://github.com/WiIIiamWei/deskit-plugin-calculator/releases/download/v0.1.1/com.deskit.calculator-0.1.1.deskit",
+      "sha256": "8dfcb8787481076f44a56fbad41e942c9023e53667126545b028b88c0a9304a9",
+      "deskitEngine": "^0.2.0",
+      "icon": "lucide:calculator",
+      "categories": [
+        "utilities"
+      ]
+    },
+    {
       "id": "com.deskit.clipboard-history",
       "name": "clipboard-history",
       "displayName": {
